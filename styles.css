@@ -1,0 +1,133 @@
+/* General Layout */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0, 0%, 95%);
+}
+
+#container {
+    font-family: Arial, sans-serif;
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 15px;
+    max-width: 90vw;
+    overflow: hidden;
+}
+
+#display {
+    width: 100%;
+    padding: 15px;
+    font-size: 2rem;
+    border: none;
+    color: white;
+    background-color: hsl(0, 0%, 20%);
+    text-align: left;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Buttons Layout */
+#buttons {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+}
+
+/* Operators Div */
+#operators {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr); /* Five buttons stacked vertically */
+    gap: 25px;
+    flex: 1;
+}
+
+/* Numbers Div */
+#numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    flex: 4;
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    aspect-ratio: 1; 
+    border-radius: 50%;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background-color: hsl(0, 0%, 30%);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: hsl(0, 0%, 40%);
+}
+
+button:active {
+    background-color: hsl(0, 0%, 50%);
+}
+
+/* Operator Button Styles */
+.operator-btn {
+    background-color: hsl(35, 100%, 55%);
+}
+
+.operator-btn:hover {
+    background-color: hsl(35, 100%, 65%);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #calculator {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    #display {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1.25rem;
+    }
+
+    #numbers {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #calculator {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    #keys {
+        flex-direction: row;
+    }
+
+    #operators {
+        flex-direction: row;
+        gap: 5px;
+        justify-content: space-between;
+    }
+
+    #numbers {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    #display {
+        font-size: 1rem;
+    }
+}
